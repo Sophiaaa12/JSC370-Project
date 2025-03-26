@@ -8,3 +8,28 @@ output:
 ---
 
 This is my JSC370 Final Project website.
+```{r setup, include=FALSE}
+source("process_starbucks_data.R")
+```
+
+```{r}
+library(plotly)
+p1_scatter <- plot_ly(data = sb_nutr, x = ~Category, type = "histogram")
+p2_scatter <- plot_ly(data = sb_nutr, x = ~Calories, y = ~`Fat (g)`, type = "scatter", mode = "markers")
+```
+
+## Showcasing plots {.tabset}
+
+### Figure 1
+
+```{r echo=FALSE}
+p1_scatter
+```
+
+### Figure 2
+
+```{r echo=FALSE}
+p2_scatter
+```
+
+{-}
